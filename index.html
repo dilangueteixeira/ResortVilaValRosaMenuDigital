@@ -18,30 +18,19 @@
            VILA ROSA RESORT - DESIGN SYSTEM
            ========================================================= */
         :root {
-            /* Cores Principais */
-            --bg-color: #050505; /* Preto profundo */
+            --bg-color: #050505;
             --bg-surface: #0a0a0a;
-            --gold: #D4AF37; /* Dourado Metálico */
+            --gold: #D4AF37;
             --gold-light: #f3e5ab;
-            --orange: #E67E22; /* Laranja Elegante (Contraste) */
-            
-            /* Tipografia Cores */
+            --orange: #E67E22;
             --text-main: #fcfcfc;
             --text-muted: #9e9e9e;
             --border-gold: rgba(212, 175, 55, 0.3);
-            
-            /* Fontes */
             --font-heading: 'Gelasio', serif;
             --font-body: 'Montserrat', sans-serif;
         }
 
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             background-color: var(--bg-color);
@@ -52,12 +41,8 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-        }
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
 
-        /* Utilitários */
         .hidden { display: none !important; }
         .fade-in { animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
         
@@ -66,359 +51,125 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Fundo de Folhas Tropicais Minimalistas (Estética Luxury Tropical) */
         .bg-pattern {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
-            z-index: -1;
-            pointer-events: none;
+            z-index: -1; pointer-events: none;
         }
         .bg-pattern::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 5C30 5 45 15 45 30C45 45 30 55 30 55C30 55 15 45 15 30C15 15 30 5 30 5Z" fill="none" stroke="rgba(212, 175, 55, 0.03)" stroke-width="1"/></svg>');
-            background-size: 150px;
-            opacity: 0.5;
+            background-size: 150px; opacity: 0.5;
         }
 
-        /* =========================================================
-           HERO SECTION
-           ========================================================= */
+        /* HERO */
         #hero {
-            height: 100vh;
-            height: 100dvh; /* Mobile fix */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
+            height: 100vh; height: 100dvh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 2rem; position: relative;
         }
-
-        .hero-logo {
-            max-width: 85%;
-            width: 320px;
-            height: auto;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-        }
-
-        .hero-subtitle {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            letter-spacing: 5px;
-            margin-bottom: 4rem;
-            text-transform: uppercase;
-            font-weight: 300;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            width: 100%;
-            max-width: 340px;
-        }
+        .hero-logo { max-width: 85%; width: 320px; height: auto; margin-bottom: 1.5rem; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+        .hero-subtitle { font-size: 0.95rem; color: var(--text-muted); letter-spacing: 5px; margin-bottom: 4rem; text-transform: uppercase; font-weight: 300; }
+        .hero-buttons { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; max-width: 340px; }
 
         .btn {
-            background: rgba(5, 5, 5, 0.6);
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--border-gold);
-            color: var(--gold);
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            padding: 1.2rem 2rem;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            letter-spacing: 1px;
-            border-radius: 2px;
+            background: rgba(5, 5, 5, 0.6); backdrop-filter: blur(5px);
+            border: 1px solid var(--border-gold); color: var(--gold);
+            font-family: var(--font-heading); font-size: 1.1rem;
+            padding: 1.2rem 2rem; cursor: pointer; transition: all 0.4s ease;
+            position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            letter-spacing: 1px; border-radius: 2px;
         }
-
         .btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: all 0.6s ease;
-            z-index: 1;
+            transition: all 0.6s ease; z-index: 1;
         }
-
-        .btn:hover {
-            background: var(--gold);
-            color: var(--bg-color);
-            border-color: var(--gold);
-            box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn i {
-            font-size: 1.2rem;
-            z-index: 2;
-        }
-
+        .btn:hover { background: var(--gold); color: var(--bg-color); border-color: var(--gold); box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2); }
+        .btn:hover::before { left: 100%; }
+        .btn i { font-size: 1.2rem; z-index: 2; }
         .btn span { z-index: 2; }
 
-        /* =========================================================
-           NAVEGAÇÃO E LAYOUT DO MENU
-           ========================================================= */
-        #app-content {
-            min-height: 100vh;
-            padding-bottom: 120px;
-        }
-
-        /* Header Fixo / Tabs */
+        /* NAV */
+        #app-content { min-height: 100vh; padding-bottom: 120px; }
         .top-nav {
-            position: sticky;
-            top: 0;
-            background: rgba(5, 5, 5, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 100;
-            border-bottom: 1px solid var(--border-gold);
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: sticky; top: 0;
+            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: 100; border-bottom: 1px solid var(--border-gold);
+            padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
         }
-
-        .nav-brand {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-logo {
-            height: 40px;
-            width: auto;
-            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2));
-        }
-
-        .nav-brand:hover {
-            color: var(--gold-light);
-        }
-
-        .tabs {
-            display: flex;
-            gap: 1.5rem;
-        }
-
+        .nav-brand { cursor: pointer; display: flex; align-items: center; }
+        .nav-logo { height: 40px; width: auto; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2)); }
+        .tabs { display: flex; gap: 1.5rem; }
         .tab-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-family: var(--font-heading);
-            font-size: 1.05rem;
-            cursor: pointer;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color 0.3s ease;
-            letter-spacing: 1px;
+            background: none; border: none; color: var(--text-muted);
+            font-family: var(--font-heading); font-size: 1.05rem; cursor: pointer;
+            padding: 0.5rem 0; position: relative; transition: color 0.3s ease; letter-spacing: 1px;
         }
-
-        .tab-btn.active {
-            color: var(--gold);
-        }
-
+        .tab-btn.active { color: var(--gold); }
         .tab-btn::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%; 
-            transform: translateX(-50%);
-            width: 0; height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 0; height: 2px; background: var(--gold); transition: width 0.3s ease;
         }
+        .tab-btn.active::after { width: 100%; }
 
-        .tab-btn.active::after {
-            width: 100%;
-        }
-
-        /* Container do Menu */
-        .menu-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        .menu-section {
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
+        /* MENU */
+        .menu-container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .menu-section { margin-bottom: 4rem; position: relative; }
         .section-title {
-            color: var(--gold);
-            font-size: 1.6rem;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            color: var(--gold); font-size: 1.6rem; text-align: center; margin-bottom: 2.5rem;
+            position: relative; text-transform: uppercase; letter-spacing: 3px;
+            display: flex; align-items: center; justify-content: center; gap: 15px;
         }
-
         .section-title::before, .section-title::after {
-            content: '';
-            height: 1px;
-            width: 50px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0.6;
+            content: ''; height: 1px; width: 50px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.6;
         }
+        .menu-item { margin-bottom: 1.8rem; break-inside: avoid; }
+        .item-header { display: flex; align-items: baseline; width: 100%; margin-bottom: 0.4rem; }
+        .item-name { font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-main); letter-spacing: 0.5px; white-space: nowrap; }
+        .item-dots { flex-grow: 1; border-bottom: 2px dotted rgba(212, 175, 55, 0.25); margin: 0 12px; position: relative; top: -4px; }
+        .item-price { font-family: var(--font-body); font-size: 1.1rem; color: var(--gold); font-weight: 500; white-space: nowrap; letter-spacing: 0.5px; }
+        .item-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; max-width: 85%; font-weight: 300; }
 
-        /* Itens do Menu (Cardápio Clássico) */
-        .menu-item {
-            margin-bottom: 1.8rem;
-            break-inside: avoid;
-        }
-
-        .item-header {
-            display: flex;
-            align-items: baseline;
-            width: 100%;
-            margin-bottom: 0.4rem;
-        }
-
-        .item-name {
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .item-dots {
-            flex-grow: 1;
-            border-bottom: 2px dotted rgba(212, 175, 55, 0.25);
-            margin: 0 12px;
-            position: relative;
-            top: -4px;
-        }
-
-        .item-price {
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            color: var(--gold);
-            font-weight: 500;
-            white-space: nowrap;
-            letter-spacing: 0.5px;
-        }
-
-        .item-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            max-width: 85%;
-            font-weight: 300;
-        }
-
-        /* =========================================================
-           BOTÃO FLUTUANTE (FAB)
-           ========================================================= */
+        /* FAB */
         .fab {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-gold);
-            color: var(--gold);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1000;
-            text-decoration: none;
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--bg-surface); border: 1px solid var(--border-gold); color: var(--gold);
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000; text-decoration: none;
         }
-
         .fab::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            border-radius: 50%;
-            border: 1px solid var(--gold);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 50%; border: 1px solid var(--gold); opacity: 0; transition: opacity 0.3s ease;
         }
-
-        .fab:hover {
-            background: var(--gold);
-            color: var(--bg-color);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
-        }
-
-        .fab:hover::before {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
+        .fab:hover { background: var(--gold); color: var(--bg-color); transform: translateY(-5px); box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25); }
+        .fab:hover::before { opacity: 1; transform: scale(1.1); }
         .fab-text {
-            position: absolute;
-            right: 75px;
-            background: rgba(10, 10, 10, 0.95);
-            color: var(--gold);
-            padding: 10px 18px;
-            border-radius: 4px;
-            border: 1px solid var(--border-gold);
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            font-family: var(--font-heading);
-            letter-spacing: 1px;
-            transform: translateX(10px);
-            backdrop-filter: blur(5px);
+            position: absolute; right: 75px;
+            background: rgba(10, 10, 10, 0.95); color: var(--gold);
+            padding: 10px 18px; border-radius: 4px; border: 1px solid var(--border-gold);
+            font-size: 0.9rem; white-space: nowrap; opacity: 0; pointer-events: none;
+            transition: all 0.3s ease; font-family: var(--font-heading); letter-spacing: 1px;
+            transform: translateX(10px); backdrop-filter: blur(5px);
         }
+        .fab:hover .fab-text { opacity: 1; transform: translateX(0); }
 
-        .fab:hover .fab-text {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* =========================================================
-           RESPONSIVIDADE (Mobile-First já aplicado)
-           ========================================================= */
+        /* RESPONSIVE */
         @media (min-width: 768px) {
-            .menu-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 0 4rem;
-            }
-            .section-title {
-                grid-column: 1 / -1;
-            }
-            .hero-logo {
-                width: 450px;
-            }
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
+            .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem; }
+            .section-title { grid-column: 1 / -1; }
+            .hero-logo { width: 450px; }
+            .hero-subtitle { font-size: 1.1rem; }
         }
-
         @media (max-width: 480px) {
             .hero-logo { width: 260px; }
             .item-name { font-size: 1.05rem; white-space: normal; }
-            .item-dots { display: none; } /* Remove dots on very small screens for wrap safety */
+            .item-dots { display: none; }
             .item-header { justify-content: space-between; }
             .item-price { font-size: 1rem; margin-left: 10px; }
             .fab { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 1.5rem; }
@@ -426,22 +177,18 @@
             .top-nav { padding: 1rem; }
             .tabs { gap: 1rem; }
         }
-
-        /* Custom Highlight Color */
         .highlight { color: var(--orange); }
     </style>
 </head>
 <body>
 
-    <!-- Fundo Estilizado -->
     <div class="bg-pattern"></div>
 
-    <!-- ================= HERO SECTION ================= -->
+    <!-- HERO -->
     <section id="hero">
         <div class="fade-in">
             <img src="logo.png" alt="Vila Rosa Resort Logo" class="hero-logo">
             <p class="hero-subtitle">Menu Digital</p>
-            
             <div class="hero-buttons">
                 <button class="btn" onclick="openApp('comidas')">
                     <i class="fa-solid fa-utensils"></i> <span>Ver Menu de Comidas</span>
@@ -453,10 +200,9 @@
         </div>
     </section>
 
-    <!-- ================= APP CONTENT ================= -->
+    <!-- APP CONTENT -->
     <section id="app-content" class="hidden">
         
-        <!-- Navegação Superior -->
         <header class="top-nav">
             <div class="nav-brand" onclick="goHome()">
                 <img src="logo.png" alt="Vila Rosa" class="nav-logo">
@@ -467,10 +213,10 @@
             </div>
         </header>
 
-        <!-- ================= ABA: COMIDAS ================= -->
+        <!-- ABA: COMIDAS -->
         <div id="view-comidas" class="menu-container fade-in">
             <div class="menu-grid">
-                
+
                 <!-- Entradas -->
                 <div class="menu-section">
                     <h2 class="section-title">Entradas</h2>
@@ -490,27 +236,6 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Pastel de Queijo</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 3.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Paté de Frango</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 3.500</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Rissóis de Camarão</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 4.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
                             <span class="item-name">Moelas</span>
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 4.000</span>
@@ -518,9 +243,30 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Peixe Molho Escabeche</span>
+                            <span class="item-name">Asinha Americana</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 5.000</span>
+                            <span class="item-price">Kz 4.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Dobradinha</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 4.950</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Frango a Passarinho</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 4.950</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Chouriço Caseiro</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 4.950</span>
                         </div>
                     </div>
                     <div class="menu-item">
@@ -532,42 +278,35 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Asinha Americana</span>
+                            <span class="item-name">Peixe Molho Escabeche</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 6.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Frango a Passarinho</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 6.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Picadinho da casa</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 7.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Choco Panado</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 7.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Chouriço Caseiro</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 7.000</span>
+                            <span class="item-price">Kz 5.000</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Pica Pau</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 5.950</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Costelinha Americana</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 6.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Tiras de Carne</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 6.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Choco Panado</span>
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 7.000</span>
                         </div>
@@ -579,45 +318,49 @@
                     <h2 class="section-title">Menu Peixe</h2>
                     <div class="menu-item">
                         <div class="item-header">
+                            <span class="item-name">Joaquinzinho</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 5.950</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
                             <span class="item-name">Filete de Peixe</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 7.500</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Funge de Peixe</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 8.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Bacalhau a Braga</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 9.500</span>
+                            <span class="item-price">Kz 6.980</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Mufete nos Dedos</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 9.500</span>
+                            <span class="item-price">Kz 7.980</span>
                         </div>
+                        <p class="item-desc">Peixe Grelhado, Batata Doce, Mandioca, Feijão Óleo de Palma, Vinagrete</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Bacalhau a Braga</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 8.500</span>
+                        </div>
+                        <p class="item-desc">Legumes, Batata Frita</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Choco Grelhado</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 11.500</span>
+                            <span class="item-price">Kz 8.970</span>
                         </div>
+                        <p class="item-desc">Batata Cozida, Legumes Salteados e Vinagrete</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Arroz do Mar (4 pessoas)</span>
+                            <span class="item-name">Arroz do Mar</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 25.000</span>
+                            <span class="item-price">Kz 9.500</span>
                         </div>
+                        <p class="item-desc">Choco, Peixe, Caranguejo, Lulas, Ameixas</p>
                     </div>
                 </div>
 
@@ -626,16 +369,17 @@
                     <h2 class="section-title">Menu Carne</h2>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Lasanha de Frango</span>
+                            <span class="item-name">Massa com Todos</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 8.000</span>
+                            <span class="item-price">Kz 7.500</span>
                         </div>
+                        <p class="item-desc">Chispe, Carne, Chouriço, Legumes e Feijão</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Massa com Todos</span>
+                            <span class="item-name">Feijoada Brasileira</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 8.000</span>
+                            <span class="item-price">Kz 7.800</span>
                         </div>
                     </div>
                     <div class="menu-item">
@@ -644,6 +388,7 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 8.000</span>
                         </div>
+                        <p class="item-desc">1/2 Frango, Batata, e Molho da Casa</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -651,20 +396,23 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 8.500</span>
                         </div>
+                        <p class="item-desc">Arroz, Batata Frita, Ovo Estrelado e Salada</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Parmegiana de Frango</span>
+                            <span class="item-name">Bife de Alcatra</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 9.000</span>
+                            <span class="item-price">Kz 8.500</span>
                         </div>
+                        <p class="item-desc">Batata Dourada, Legume Salteado</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Parmegiana de Carne</span>
+                            <span class="item-name">Costeletas Chefe</span>
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 9.000</span>
                         </div>
+                        <p class="item-desc">Arroz, Batata Frita, Legume Salteado</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -672,6 +420,7 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 9.500</span>
                         </div>
+                        <p class="item-desc">Carne Moída, Molho de Tomate e Queijo</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -679,6 +428,7 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 10.000</span>
                         </div>
+                        <p class="item-desc">Arroz, Batata Frita, Couve Mineira, Feijão Preto, Farofa, e Banana Frita</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -686,13 +436,7 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 10.000</span>
                         </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Pá de Porco</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 10.500</span>
-                        </div>
+                        <p class="item-desc">Arroz, Batata Frita, Couve Mineira, Feijão Preto, Farofa, e Banana Frita</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -700,20 +444,15 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 16.000</span>
                         </div>
+                        <p class="item-desc">Arroz, Batata Frita, Couve Mineira, Feijão Preto, Farofa, e Banana Frita</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Miminhos de Porco (4 pessoas)</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 20.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Grelhada Mista (4 pessoas)</span>
+                            <span class="item-name">Grelhada Mista 4 x Pax</span>
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 25.000</span>
                         </div>
+                        <p class="item-desc">1/2 Frango, Pá de Porco, Costelinhas, Linguiça, Bife de Alcatra, Arroz, Batata Frita, Couve Mineira, Feijão Preto, Farofa, e Banana Frita</p>
                     </div>
                 </div>
 
@@ -750,10 +489,11 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Bifana no pão</span>
+                            <span class="item-name">Bifana no Pão</span>
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 4.000</span>
                         </div>
+                        <p class="item-desc">Bifana Portuguesa, e Ovo</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -768,6 +508,7 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 6.500</span>
                         </div>
+                        <p class="item-desc">Bifana Portuguesa, Batata Frita (doce/rena), Ovo Estrelado</p>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
@@ -775,19 +516,13 @@
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 7.000</span>
                         </div>
+                        <p class="item-desc">Bife de Alcatra, Batata Frita (doce/rena) e Ovo Estrelado</p>
                     </div>
                 </div>
 
                 <!-- Sobremesas -->
                 <div class="menu-section">
                     <h2 class="section-title">Sobremesas</h2>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Arroz Doce</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 2.000</span>
-                        </div>
-                    </div>
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Pudim</span>
@@ -797,9 +532,16 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Salada de Frutas</span>
+                            <span class="item-name">Mousse de Maracujá</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 4.000</span>
+                            <span class="item-price">Kz 3.000</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Bolo de Chocolate com Gelado</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 3.500</span>
                         </div>
                     </div>
                 </div>
@@ -807,9 +549,28 @@
             </div>
         </div>
 
-        <!-- ================= ABA: BEBIDAS ================= -->
+        <!-- ABA: BEBIDAS -->
         <div id="view-bebidas" class="menu-container hidden">
             <div class="menu-grid">
+
+                <!-- Sumos -->
+                <div class="menu-section">
+                    <h2 class="section-title">Sumos</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Sumo Pacote</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 2.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Sumo Natural</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 3.000</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Refrigerantes -->
                 <div class="menu-section">
@@ -860,14 +621,21 @@
                         <div class="item-header">
                             <span class="item-name">Welwitcha (Água Tonica)</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 1.200</span>
+                            <span class="item-price">Kz 1.500</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Ginger Ale</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 1.200</span>
+                            <span class="item-price">Kz 1.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Speed (Energético)</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.500</span>
                         </div>
                     </div>
                 </div>
@@ -884,16 +652,23 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Hunters</span>
+                            <span class="item-name">Booster Morango</span>
                             <div class="item-dots"></div>
                             <span class="item-price">Kz 1.500</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
+                            <span class="item-name">Hunters</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 2.000</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
                             <span class="item-name">Savana</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 1.500</span>
+                            <span class="item-price">Kz 2.000</span>
                         </div>
                     </div>
                     <div class="menu-item">
@@ -938,9 +713,193 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-header">
+                            <span class="item-name">Booster Morango</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 750</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
                             <span class="item-name">Corona</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 2.000</span>
+                            <span class="item-price">Kz 1.500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cerveja Lata -->
+                <div class="menu-section">
+                    <h2 class="section-title">Cerveja Lata</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Eka</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.200</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Cuca</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.200</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Nocal</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.200</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Dopel</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.200</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cerveja Garrafa -->
+                <div class="menu-section">
+                    <h2 class="section-title">Cerveja Garrafa</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Eka</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Cuca</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Nocal</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Dopel</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 750</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Heineken</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fino -->
+                <div class="menu-section">
+                    <h2 class="section-title">Fino</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Cuca Lambreta</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Cuca Normal</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 600</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Cuca Tulipa</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 800</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Cuca Canecão</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.800</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vinhos Tintos -->
+                <div class="menu-section">
+                    <h2 class="section-title">Vinhos Tintos</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Fazenda Velha</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 12.000</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Silk Space Castanho</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 20.000</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Silk Space Original</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 20.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vinho Barril -->
+                <div class="menu-section">
+                    <h2 class="section-title">Vinho Barril</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Copo</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Valmont</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 1.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Meio Litro</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 3.000</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Um Litro</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 6.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vinho Branco -->
+                <div class="menu-section">
+                    <h2 class="section-title">Vinho Branco</h2>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Mabanca Pink</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 9.000</span>
                         </div>
                     </div>
                 </div>
@@ -976,9 +935,16 @@
                     <h2 class="section-title">Cognac</h2>
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Cognac 1920 (Dose 3000)</span>
+                            <span class="item-name">1920 (Dose 3000)</span>
                             <div class="item-dots"></div>
-                            <span class="item-price">Kz 25.000</span>
+                            <span class="item-price">Kz 20.000</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <span class="item-name">Constantino (Dose 3000)</span>
+                            <div class="item-dots"></div>
+                            <span class="item-price">Kz 20.000</span>
                         </div>
                     </div>
                 </div>
@@ -1092,77 +1058,6 @@
                     </div>
                 </div>
 
-                <!-- Vinhos Tintos -->
-                <div class="menu-section">
-                    <h2 class="section-title">Vinhos Tintos</h2>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Fazenda Velha</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 12.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Silk Space Castanho</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 20.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Silk Space Original</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 20.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vinho Barril -->
-                <div class="menu-section">
-                    <h2 class="section-title">Vinho Barril</h2>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Copo</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 1.500</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Valmont</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 1.500</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Meio Litro</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 3.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Um Litro</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 6.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vinho Branco -->
-                <div class="menu-section">
-                    <h2 class="section-title">Vinho Branco</h2>
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <span class="item-name">Mabanca</span>
-                            <div class="item-dots"></div>
-                            <span class="item-price">Kz 9.000</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -1173,7 +1068,6 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts de Interação -->
     <script>
         const heroSection = document.getElementById('hero');
         const appContent = document.getElementById('app-content');
@@ -1207,11 +1101,9 @@
                 tabBebidas.classList.add('active');
                 tabComidas.classList.remove('active');
             }
-            
-            // Re-trigger animation
             const activeView = type === 'comidas' ? viewComidas : viewBebidas;
             activeView.classList.remove('fade-in');
-            void activeView.offsetWidth; // Trigger reflow for animation restart
+            void activeView.offsetWidth;
             activeView.classList.add('fade-in');
         }
     </script>
